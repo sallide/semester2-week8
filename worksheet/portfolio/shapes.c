@@ -57,7 +57,7 @@ float triangleArea(Triangle t) {
 
     float s = (a+b+c)/2;
 
-    float area = sqrt(s*(s-a)*(s-b)*(s-a));
+    float area = sqrt(s*(s-a)*(s-b)*(s-c));
     return area;
 }
 
@@ -65,3 +65,30 @@ float triangleArea(Triangle t) {
 // - start with stubs as above
 // - compile regularly to test syntax
 // - test functions by calling them from main()
+
+
+bool samePoint(Point p1, Point p2) {
+    if (fabs(p1.x-p2.x) < 0.000001) {
+        if (fabs(p1.y-p2.y) < 0.000001) {
+            return true;}
+        }
+    return false;
+}
+
+bool pointInLine(Point p, Line l) {
+    if (samePoint(p,l.p[0])) {
+        return true;}
+    if (samePoint(p,l.p[1])) {
+        return true;}
+    return false;
+}
+
+bool pointInTriangle(Point p, Triangle t) {
+    if (samePoint(p, t.p[0])) {
+        return true;}
+    if (samePoint(p, t.p[1])) {
+        return true; }
+    if (samePoint(p, t.p[2])) {
+        return true; }
+    return false;
+}
