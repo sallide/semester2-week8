@@ -5,10 +5,17 @@
 #include "shapes.h"
 
 int main( void ) {
+    
+    Point p1 = makePoint(0.0, 0.0);
+    Point p2 = makePoint(1.0, 0.0);
+    Point p3 = makePoint(0.0, 1.0);
 
-    Point p1 = makePoint(0.0,0.0);
-    
-    // test your code by calling the functions and printing the output 
-    
+    Triangle t = makeTriangle(p1, p2, p3);
+
+    float area = triangleArea(t);
+    printf("Triangle area: %f\n", area);
+
+
+
     return 0;
 }
